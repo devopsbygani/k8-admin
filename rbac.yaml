@@ -1,3 +1,4 @@
+# gani is new joining fresher,limiting his access to namespace and resource pods.
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
@@ -23,5 +24,32 @@ subjects:
 roleRef:
   # "roleRef" specifies the binding to a Role / ClusterRole
   kind: Role #this must be Role or ClusterRole
-  name: pod-reader # this must match the name of the Role or ClusterRole you wish to bind to
+  name: expense-trainee # this must match the name of the Role or ClusterRole you wish to bind to
   apiGroup: rbac.authorization.k8s.io
+---
+# uday is a new joiner experienced. granting namespace level all access.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: expense
+  name: expense-admin
+rules:
+- apiGroups: ["*"] # "" indicates the core API group
+  resources: ["*"]   # can be services,deployments etc. * represent all resources
+  verbs: ["*"]   # all type of actions.
+---
+# rolebinding of uday
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  namespace: expense
+  name: expense-admin
+roleRef:
+  kind: Role
+  name: expense-admin
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+- kind: User
+  name: uday
+  apiGroup: rbac.authorization.k8s.io
+
