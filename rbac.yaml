@@ -1,0 +1,27 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: expense
+  name: expense-trainee
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods"]   # can be services,deployments etc.
+  verbs: ["get", "watch", "list"]
+---
+#RoleBinding: A role binding grants the permissions defined in a role to a user or set of users. 
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: expense-trainee
+  namespace: expense
+subjects:
+# You can specify more than one "subject"
+- kind: User
+  name: gani # "name" is case sensitive
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  # "roleRef" specifies the binding to a Role / ClusterRole
+  kind: Role #this must be Role or ClusterRole
+  name: pod-reader # this must match the name of the Role or ClusterRole you wish to bind to
+  apiGroup: rbac.authorization.k8s.io
