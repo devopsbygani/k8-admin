@@ -16,8 +16,8 @@ make some configuration code changes in it .
 adding mapUser:|
        - groups:
          - # role name
-        userarn: 
-        username: 
+        userarn: <enter value here>
+        username: <enter value here>
 ```
 
 
