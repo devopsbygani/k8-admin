@@ -12,7 +12,7 @@ data:
       userarn: arn:aws:iam::905418383993:user/gani
       username: gani
     - groups:
-      - expense-admin                                            
+      - expense-admin                                     
       userarn: arn:aws:iam::905418383993:user/gani
       username: gani
 kind: ConfigMap
