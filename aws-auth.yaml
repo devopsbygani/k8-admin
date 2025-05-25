@@ -11,6 +11,10 @@ data:
       - expense-trainee
       userarn: arn:aws:iam::905418383993:user/gani
       username: gani
+    - groups:
+      - expense-admin                                            
+      userarn: arn:aws:iam::905418383993:user/gani
+      username: gani
 kind: ConfigMap
 metadata:
   creationTimestamp: "2025-05-25T08:59:04Z"
