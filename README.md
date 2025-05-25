@@ -12,7 +12,12 @@ step3: create role , rolebinding
 
 ```
 step4: intergarting IAM with eks using aws-auth configmap from kube-system namespace.
-make some configuration code changes in it 
+make some configuration code changes in it .
+adding mapUser:|
+       - groups:
+         - # role name
+        userarn: 
+        username: 
 ```
 
 
