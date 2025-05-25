@@ -31,7 +31,7 @@ mapUsers: |
       - <role-name>
     userarn: <enter value here>
     username: <enter value here>
-
+```
 * reference : https://github.com/keikoproj/aws-auth.git
 
 
