@@ -17,7 +17,7 @@ Create a Kubernetes Role and RoleBinding.
 
 > **Note:**  
 > Role and RoleBinding are used for namespace-level resource access, e.g., for pods, services, deployments, etc.
-
+> ClusterRole and ClusterRoleBinding  this is not specific to namespace. this is cluster levele access. [persistentVolumes,nodes,namespaces, etc.]
 ---
 
 ### Step 4: Integrating IAM with EKS using `aws-auth` ConfigMap
